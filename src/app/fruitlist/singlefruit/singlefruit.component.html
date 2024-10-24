@@ -8,14 +8,14 @@
             <p><b>Bewertung:</b></p>
             <div>
                 @for (count of [1,2,3,4,5]; track fruit) {
-                <!-- @if (fruit.stars >= count) {
+                @if (fruit.stars >= count) {
                         <img src="./assets/img/stars/star.svg" alt="" srcset="">
                     } @else if (fruit.stars >= count - 0.5) {
                         <img src="./assets/img/stars/star-half.svg" alt="" srcset="">
                     } @else {
                         <img src="./assets/img/stars/star-empty.svg" alt="" srcset="">
-                    } -->
-                @switch (true) {
+                    }
+                <!-- @switch (true) {
                 @case (fruit.stars >= count) {
                 <img src="./assets/img/stars/star.svg" alt="" srcset="">
                 } @case (fruit.stars >= count - 0.5) {
@@ -23,7 +23,7 @@
                 } @default {
                 <img src="./assets/img/stars/star-empty.svg" alt="" srcset="">
                 }
-                }
+                } -->
                 }
                 <!-- <p [ngStyle]="{color: fruit.stars > 3 ? fontColorGood : fontColorBad , 'background-color' : 'black'}">({{fruit.stars}})</p> -->
                  <p>{{fruit.stars}}</p>
@@ -39,7 +39,7 @@
                 no comments
                 }
             </div>
-            <div><input type="text"><button><img src="./assets/img/arrow-35-32.png" alt="" srcset=""></button>
+            <div><input [(ngModel)]="inputData" type="text"><button><img (click)="sendInputData()" src="./assets/img/arrow-35-32.png" alt="" srcset=""></button>
             </div>
         </div>
     </div>
