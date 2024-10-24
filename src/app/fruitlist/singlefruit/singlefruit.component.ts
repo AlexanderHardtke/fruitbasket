@@ -23,9 +23,8 @@ export class SinglefruitComponent {
   @Output()fruitname = new EventEmitter<string>();
 
   sendInputData() {
-    this.inputData = "moin";
-    console.log(this.inputData);
-    
+    this.fruitname.emit(this.inputData);
+    this.inputData = "";
   }
 
 }
